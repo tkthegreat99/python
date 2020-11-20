@@ -1,0 +1,24 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G=nx.Graph()
+G.add_node('a')
+G.add_node('b')
+G.add_node('c')
+G.add_node('d')
+G.add_node('e')
+G.add_node('f')
+G.add_edge('a','b')
+G.add_edge('a','d')
+G.add_edge('a','c')
+G.add_edge('c','e')
+G.add_edge('c','f')
+G.add_edge('c','d')
+dotted = [('a','d'),('a','c'),('c','d')]
+directed = [('a','b'),('c','e'),('c','f')]
+graph = nx.spring_layout(G)
+nx.draw_networkx_edges(G,graph, edgelist=dotted, width=5, style='dashed', edge_color='blue')
+nx.draw_networkx_nodes(G, graph, node_size=500, node_color='red')
+nx.draw_networkx_labels(G, graph, font_size=11, font_weight='bold')
+nx.draw_networkx_edges(G, graph, edgelist=directed, width=5, style='solid')
+nx.draw_networkx_edges(G, graph, edgelist=dotted, width=5, style='dashed', edge_color='blue')
