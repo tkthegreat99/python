@@ -1,0 +1,12 @@
+import numpy as np
+G = [[1,1,0,0],[0,0,1,1],[0,0,0,1],[0,0,1,0]]
+G = np.array(G)
+
+G2= [[1,1,0,0],[0,0,1,1],[0,0,0,1],[0,0,1,0]]
+G2 = np.array(G2)
+
+k = 1000
+for i in range(k-1):
+  G2 = np.matmul(G2,G)
+ 
+print(G2[0][2])
